@@ -17,6 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# Text to put in the browser tab (HTML <title>)
+admin.site.site_title = "My Website Portal"
+
+# Text to put in the header (the big <h1> tag)
+admin.site.site_header = "My Website Administration"
+
+# Text to put at the top of the admin index page
+admin.site.index_title = "Welcome to My First Website"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls'))
