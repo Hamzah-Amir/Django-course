@@ -11,7 +11,9 @@ def home(request):
     # return HttpResponse("This is home page")
 
 def about(request):
-    return HttpResponse("This is home page")
+    return render(request, 'about.html')
+    # return HttpResponse("This is home page")
 
 def contact(request):
-    return HttpResponse("This is home page")
+    return render(request, 'contact.html')
+    # return HttpResponse("This is home page")
