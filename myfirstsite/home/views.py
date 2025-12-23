@@ -3,7 +3,11 @@ from django.shortcuts import render, HttpResponse
 # Create your views here.
 
 def home(request):
-    return HttpResponse("This is home page")
+    context = {
+        'variable': 'I am variable'
+    }
+    return render(request, 'index.html', context)
+    # return HttpResponse("This is home page")
 
 def about(request):
     return HttpResponse("This is home page")
