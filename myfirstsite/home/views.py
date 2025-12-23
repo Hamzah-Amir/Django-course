@@ -4,7 +4,8 @@ from django.shortcuts import render, HttpResponse
 
 def home(request):
     context = {
-        'variable': 'I am variable'
+        'variable': 'I am variable',
+        'name': 'Hamza'
     }
     return render(request, 'index.html', context)
     # return HttpResponse("This is home page")
