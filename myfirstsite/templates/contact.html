@@ -1,3 +1,21 @@
 {% extends "base.html" %}
-{% block title %}Contact{% endblock title %}
-{% block body %}This is Contact Page{% endblock body %}
+{% block style %}
+.img{
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    background-color: black;
+}
+{% endblock style %}
+{% block title %}Contact Us{% endblock title %}
+{% block body %}
+<div class='container-fluid p-0'>
+    <div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class='img' src="/static/img/contact.jpg" class="d-block w-100 my-4" alt="Icecream Image">
+</div>
+</div>
+{% endblock body %}
