@@ -46,6 +46,14 @@
     justify-content: center;
 }
 
+.links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
 {% endblock style %}
 
 {% block title %}Contact Us{% endblock title %}
@@ -63,7 +71,10 @@
 </div>
 <div class='contact-section'>
 <h2 class="text-center my-4">Contact Us to create your own website</h2>
-<a class='msg' type="button" target="_blank" href='https://www.facebook.com/profile.php?id=61556077648270'>Send message</a>
+<div class='links'>
+    <a class='msg' type="button" target="_blank" href='https://www.facebook.com/profile.php?id=61556077648270'>Send message on facebook</a>
+    <a class='msg' type="button" target="_blank" href='https://www.linkedin.com/in/hamza-amir-024502320/'>Send message LinkedIn</a>
+</div>
 </div>
 </main>
 {% endblock body %}
