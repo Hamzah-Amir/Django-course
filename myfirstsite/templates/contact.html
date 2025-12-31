@@ -2,55 +2,55 @@
 {% block style %}
 
 .main{
-    min-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+min-width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .img{
-    height: 700px;
-    width: 100%;
-    object-fit: cover;
-    background-color: black;
+height: 700px;
+width: 100%;
+object-fit: cover;
+background-color: black;
 }
 
 .msg{
-    margin-left: 10px;
-    padding: 10px 15px;
-    background-color: #007bff;
-    text-decoration: none;
-    color: white;
-    border-radius: 5px;
+margin-left: 10px;
+padding: 10px 15px;
+background-color: #007bff;
+text-decoration: none;
+color: white;
+border-radius: 5px;
 }
 
 .msg:hover{
-    text-decoration: none;
-    color: white;
-    background-color: #0056b3;
+text-decoration: none;
+color: white;
+background-color: #0056b3;
 }
 
 .contact-section{
-    position: absolute;
-    top: 50%;
-    left: 30%;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40vw;
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+position: absolute;
+top: 50%;
+left: 30%;
+margin-top: 30px;
+margin-left: auto;
+margin-right: auto;
+width: 40vw;
+margin-bottom: 50px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 }
 
 .links{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin-top: 20px;
 }
 
 {% endblock style %}
@@ -59,15 +59,17 @@
 
 {% block body %}
 <main class='main'>
-<div class='container-fluid p-0'>
-      <img class='img' src="/static/img/contact.jpg" class="d-block w-100 my-4" alt="Icecream Image">
-</div>
-<div class='contact-section'>
-<h2 class="text-center my-4">Contact Us to create your own website</h2>
-<div class='links'>
-    <a class='msg' type="button" target="_blank" href='https://www.facebook.com/profile.php?id=61556077648270'>Send message on facebook</a>
-    <a class='msg' type="button" target="_blank" href='https://www.linkedin.com/in/hamza-amir-024502320/'>Send message LinkedIn</a>
-</div>
-</div>
+    <div class='container-fluid p-0'>
+        <img class='img' src="/static/img/contact.jpg" class="d-block w-100 my-4" alt="Icecream Image">
+    </div>
+    <div class='contact-section'>
+        <h2 class="text-center my-4">Contact Us to create your own website</h2>
+        <div class='links'>
+            <a class='msg' type="button" target="_blank"
+                href='https://www.facebook.com/profile.php?id=61556077648270'>Send message on facebook</a>
+            <a class='msg' type="button" target="_blank" href='https://www.linkedin.com/in/hamza-amir-024502320/'>Send
+                message LinkedIn</a>
+        </div>
+    </div>
 </main>
 {% endblock body %}
