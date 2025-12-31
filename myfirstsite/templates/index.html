@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
+{% block style %}{% endblock style %}
 {% block title %}Home{% endblock title %}
 
 {% block body %}
-<div class='container-fluid p-0'>
+<div class='container container-fluid p-0'>
     <div id="carouselExampleIndicators" class="carousel slide">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -12,7 +13,7 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/static/img/icecream.jpg" class="d-block w-100" alt="Icecream Image">
+      <img class='img' src="/static/img/icecream.jpg" class="d-block w-100" alt="Icecream Image">
     </div>
     <div class="carousel-item">
       <img src="..." class="d-block w-100" alt="...">
