@@ -2,8 +2,17 @@
 __pycache__/
 *.py[cod]
 *$py.class
-__pycache__/
-*.pyc
-__pycache__/
-*.db.sqlite3
+
+# Django stuff
 *.sqlite3
+db.sqlite3
+
+# Environments
+env/
+venv/
+.venv/
+
+# IDE / editor files
+.vscode/
+.idea/
+*.swp
