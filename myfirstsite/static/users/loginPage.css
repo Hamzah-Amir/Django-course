@@ -1,93 +1,134 @@
-/* Login Page Styles (updated for Email + Password layout) */
+/* Login Page Styles — refined for the current simplified form */
 
+/* Page background & type */
 body {
-  background: linear-gradient(135deg, #f5f7fb 0%, #dfe9f3 100%);
+  background: linear-gradient(135deg, #f7fbff 0%, #eef4fb 100%);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.username {
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
   text-align: center;
   margin-top: 2.25rem;
-  color: #222;
-  font-weight: 600;
+  color: #0f1724;
+  font-weight: 700;
   letter-spacing: 0.2px;
 }
 
-form {
-  max-width: 420px;
+/* Scope styles to the page where an H1 is immediately followed by the form (your login page) */
+h1 + form {
+  max-width: 460px;
   margin: 1.5rem auto 3rem;
-  padding: 2rem;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 8px 30px rgba(33,33,33,0.08);
-  border: 1px solid rgba(0,0,0,0.04);
+  padding: 2.1rem 2.2rem;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(12, 40, 80, 0.06);
+  border: 1px solid rgba(20, 45, 80, 0.04);
 }
 
-form div {
+h1 + form div {
   margin-bottom: 1.05rem;
 }
 
+/* Labels */
 label {
   display: block;
   margin-bottom: 0.45rem;
   font-weight: 600;
-  color: #444;
-  text-transform: none; /* keep label text as written */
+  color: #374151;
   font-size: 0.95rem;
 }
 
+/* Inputs */
 input[type="email"],
 input[type="password"],
 input[type="text"] {
   width: 100%;
-  padding: 0.65rem 0.9rem;
-  border: 1px solid #d1d7dd;
-  border-radius: 8px;
+  padding: 0.72rem 0.95rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
   font-size: 1rem;
   transition: border-color .12s ease, box-shadow .12s ease, transform .06s ease;
+  background: #ffffff;
 }
 
 input::placeholder {
   color: #9aa3ad;
 }
 
+/* Focus and interaction */
 input:focus {
   outline: none;
-  border-color: #5b9bf3;
-  box-shadow: 0 0 0 3px rgba(91,155,243,0.12);
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59,130,246,0.08);
   transform: translateY(-1px);
 }
 
+/* Native browser invalid state */
+input:invalid {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.08);
+}
+
+/* Submit button */
 button[type="submit"] {
   width: 100%;
-  padding: 0.8rem;
-  background: linear-gradient(180deg, #0d6efd 0%, #0b5ed7 100%);
+  padding: 0.9rem;
+  background: linear-gradient(180deg, #0b63ff 0%, #084ac7 100%);
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(13,110,253,0.16);
+  box-shadow: 0 10px 24px rgba(11,99,255,0.14);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* subtle icon before the label of the button (visually-enhanced but not changing HTML) */
+button[type="submit"]::before {
+  content: "🔒";
+  font-size: 0.95rem;
 }
 
 button[type="submit"]:hover {
-  filter: brightness(0.97);
-  transform: translateY(-1px);
+  filter: brightness(0.98);
+  transform: translateY(-2px);
 }
 
-/* accessibility: make focus visible for keyboard users */
 button:focus {
-  outline: 3px solid rgba(11,94,215,0.18);
+  outline: 3px solid rgba(11,74,188,0.12);
 }
 
-/* small screens */
-@media (max-width: 480px) {
-  form {
+/* Small-screen tweaks */
+@media (max-width: 520px) {
+  h1 + form {
     margin: 1rem;
     padding: 1.1rem;
+    border-radius: 10px;
   }
 
   h1 { font-size: 1.25rem; }
+  label { font-size: 0.92rem; }
 }
+
+/* Utility: make the first input stand out slightly */
+h1 + form div:first-of-type input {
+  box-shadow: 0 2px 8px rgba(12, 40, 80, 0.02);
+}
+
+/* End of login styles */
