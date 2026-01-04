@@ -32,3 +32,6 @@ def dashboard(request):
     if request.user.is_anonymous:
         return redirect("loginPage")
     return render(request, 'users/dashboard.html')
+
+def registerUser(request):
+    pass
