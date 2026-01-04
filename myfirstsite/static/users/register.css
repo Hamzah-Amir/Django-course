@@ -1,0 +1,108 @@
+/* Register Page Styles */
+
+/* Page background and typography */
+body {
+  background: linear-gradient(135deg, #f8fafc 0%, #eef6ff 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #17212b;
+  -webkit-font-smoothing: antialiased;
+}
+
+.register-container {
+  max-width: 560px;
+  margin: 3.25rem auto;
+  padding: 0 1rem;
+}
+
+.register-container h1 {
+  text-align: center;
+  margin-top: 0.6rem;
+  color: #0f1724;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* Card that wraps the form */
+.register-container form {
+  margin: 1.25rem auto 2.5rem;
+  padding: 1.75rem 1.85rem;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(12, 40, 80, 0.06);
+  border: 1px solid rgba(20, 45, 80, 0.04);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.05rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 0.72rem 0.95rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color .12s ease, box-shadow .12s ease, transform .06s ease;
+  background: #ffffff;
+}
+
+input::placeholder { color: #9aa3ad; }
+
+input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59,130,246,0.08);
+  transform: translateY(-1px);
+}
+
+input:invalid {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.08);
+}
+
+button[type="submit"], button {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(180deg, #0b63ff 0%, #084ac7 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(11,99,255,0.14);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+button[type="submit"]::before { content: "✨"; font-size: 0.95rem; }
+
+button[type="submit"]:hover { filter: brightness(0.98); transform: translateY(-2px); }
+button:focus { outline: 3px solid rgba(11,74,188,0.12); }
+
+/* Adjustments for small screens */
+@media (max-width: 520px) {
+  .register-container { margin-top: 1.5rem; }
+  .register-container form { margin: 1rem; padding: 1.1rem; border-radius: 10px; }
+  h1 { font-size: 1.25rem; }
+  label { font-size: 0.92rem; }
+}
+
+/* Slight lift for the first input */
+.register-container form .form-group:first-of-type input {
+  box-shadow: 0 2px 8px rgba(12, 40, 80, 0.02);
+}
