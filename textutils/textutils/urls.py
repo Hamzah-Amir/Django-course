@@ -21,4 +21,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index, name="index"),
+    path("removepunctuation", views.removepunctuation, name="removepunctuation"),
+    path("capitalizefirst", views.capitalizefirst, name="capitalizefirst"),
+    path("removespaces", views.removespaces, name="removespaces"),
 ]
