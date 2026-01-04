@@ -10,6 +10,8 @@ def loginPage(request):
     return render(request, 'users/loginPage.html')
 
 def loginUser(request):
+    if request.user.is_authenticated:
+        return redirect("dashboard")
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -34,4 +36,12 @@ def dashboard(request):
     return render(request, 'users/dashboard.html')
 
 def registerUser(request):
+    if request.user.is_authenticated:
+        return redirect("dashboard")
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = User.objects.create_user(username=username, password=password)
+        user.save()
+        return redirect('home')
     return render(request, 'users/register.html')
