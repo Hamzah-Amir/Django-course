@@ -12,3 +12,6 @@ def capitalizefirst(request):
 
 def removespaces(request):
     return HttpResponse("This is the Remove Extra Spaces page.")
+
+def charcount(request):
+    return HttpResponse("This is the Character Count page.")

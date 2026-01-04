@@ -24,4 +24,5 @@ urlpatterns = [
     path("removepunctuation", views.removepunctuation, name="removepunctuation"),
     path("capitalizefirst", views.capitalizefirst, name="capitalizefirst"),
     path("removespaces", views.removespaces, name="removespaces"),
+    path("charcount", views.charcount, name="charcount"),
 ]
