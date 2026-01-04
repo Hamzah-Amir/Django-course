@@ -17,7 +17,7 @@ def loginUser(request):
         if user is not None:
             login(request, user)
             print(request.user.email)
-            return render(request, "users/dashboard.html")
+            return redirect("dashboard")
         else:
             return render(request, 'users/loginPage.html', {'error': 'Invalid credentials'})
     
@@ -26,3 +26,9 @@ def loginUser(request):
 def logoutUser(request):
     logout(request)
     return redirect("loginPage")
+
+def dashboard(request):
+
+    if request.user.is_anonymous:
+        return redirect("loginPage")
+    return render(request, 'users/dashboard.html')
