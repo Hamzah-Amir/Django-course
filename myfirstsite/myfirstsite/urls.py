@@ -28,5 +28,6 @@ admin.site.index_title = "Welcome to My First Website"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('home.urls'))
+    path('', include('home.urls')),
+    path('users/', include('users.urls'))
 ]
