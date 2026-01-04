@@ -1,17 +1,35 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import string
 
 def index(request):
     return render(request, 'home.html')
-def removepunctuation(request):
+
+def analyze(request):
+    # Get the text and options from the request
     text = request.GET.get('text', 'default')
-    return HttpResponse("This is the Remove Punctuation page.")
+    removepunc = request.GET.get('removepunc', 'off')
+    capitalizefirst = request.GET.get('capitalizefirst', 'off')
+    charcount = request.GET.get('charcount', 'off')
 
-def capitalizefirst(request):
-    return HttpResponse("This is the Capitalize First Letter page.")
+    # Remove punctuation
+    punctuations = string.punctuation
+    analyzed = ''
+    purpose = 'None'
+    if removepunc == 'on':
+        purpose = "Removed Punctuations"
+        for char in text:
+            if char not in punctuations:
+                analyzed += char
+    elif capitalizefirst == 'on':
+        purpose = "Capitalized First Letter"
+        if len(text) > 0:
+            analyzed = text[0].upper() + text[1:]
+        else:
+            analyzed = text
+    elif charcount == 'on':
+        purpose = "Character Count"
+        analyzed = str(len(text))
+    params = {'purpose': purpose, 'preanalyzed_text': text, 'analyzed_text': analyzed}
 
-def removespaces(request):
-    return HttpResponse("This is the Remove Extra Spaces page.")
-
-def charcount(request):
-    return HttpResponse("This is the Character Count page.")
+    return render(request, 'analyze.html', params)
