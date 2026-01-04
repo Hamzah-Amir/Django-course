@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Analyze Text{% endblock title %}
+{% block body %}
+<h1>Your Analyzed Text - {{ purpose }}</h1>
+<h2>Original Text</h2>
+<p>{{ preanalyzed_text }}</p>
+<h2>Processed Text</h2>
+<p>{{ analyzed_text }}</p>
+{% endblock body %}
