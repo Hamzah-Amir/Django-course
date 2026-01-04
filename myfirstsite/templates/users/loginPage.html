@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block cssFiles %}
+<link rel="stylesheet" href="{% static 'users/loginPage.css' %}">
+{% endblock cssFiles %}
 
 {% block body %}
 <h1>Login Page</h1>
