@@ -23,5 +23,7 @@
             <button type="submit">Login</button>
         </div>
     </form>
-</div>
-{% endblock body %}
+    <div class="register-div">
+        <p>Don't have an account? <a href="{% url 'registerUser' %}">Register here</a></p>
+    </div>
+    {% endblock body %}
