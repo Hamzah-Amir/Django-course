@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
 from .models import Contact
 from django.contrib import messages
@@ -9,6 +9,9 @@ def home(request):
     context = {
         'name': 'Hamza'
     }
+    print(request.user)
+    if request.user.is_anonymous:
+        return redirect("/users")
     return render(request, 'index.html', context)
     # return HttpResponse("This is home page")
 
