@@ -1,4 +1,4 @@
-/* Login Page Styles */
+/* Login Page Styles (updated for Email + Password layout) */
 
 body {
   background: linear-gradient(135deg, #f5f7fb 0%, #dfe9f3 100%);
@@ -8,9 +8,10 @@ body {
 
 h1 {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 2.25rem;
   color: #222;
   font-weight: 600;
+  letter-spacing: 0.2px;
 }
 
 form {
@@ -19,57 +20,74 @@ form {
   padding: 2rem;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(33,33,33,0.08);
+  box-shadow: 0 8px 30px rgba(33,33,33,0.08);
   border: 1px solid rgba(0,0,0,0.04);
 }
 
 form div {
-  margin-bottom: 1rem;
+  margin-bottom: 1.05rem;
 }
 
 label {
   display: block;
-  margin-bottom: 0.4rem;
-  font-weight: 500;
+  margin-bottom: 0.45rem;
+  font-weight: 600;
   color: #444;
-  text-transform: capitalize;
+  text-transform: none; /* keep label text as written */
+  font-size: 0.95rem;
 }
 
-input[type="text"],
-input[type="password"] {
+input[type="email"],
+input[type="password"],
+input[type="text"] {
   width: 100%;
-  padding: 0.6rem 0.75rem;
-  border: 1px solid #ced4da;
-  border-radius: 6px;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid #d1d7dd;
+  border-radius: 8px;
   font-size: 1rem;
-  transition: border-color .15s ease, box-shadow .15s ease;
+  transition: border-color .12s ease, box-shadow .12s ease, transform .06s ease;
+}
+
+input::placeholder {
+  color: #9aa3ad;
 }
 
 input:focus {
   outline: none;
   border-color: #5b9bf3;
   box-shadow: 0 0 0 3px rgba(91,155,243,0.12);
+  transform: translateY(-1px);
 }
 
 button[type="submit"] {
   width: 100%;
-  padding: 0.75rem;
-  background: #0d6efd;
+  padding: 0.8rem;
+  background: linear-gradient(180deg, #0d6efd 0%, #0b5ed7 100%);
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  box-shadow: 0 6px 18px rgba(13,110,253,0.16);
 }
 
 button[type="submit"]:hover {
-  background: #0b5ed7;
+  filter: brightness(0.97);
+  transform: translateY(-1px);
+}
+
+/* accessibility: make focus visible for keyboard users */
+button:focus {
+  outline: 3px solid rgba(11,94,215,0.18);
 }
 
 /* small screens */
 @media (max-width: 480px) {
   form {
     margin: 1rem;
-    padding: 1rem;
+    padding: 1.1rem;
   }
+
+  h1 { font-size: 1.25rem; }
 }
