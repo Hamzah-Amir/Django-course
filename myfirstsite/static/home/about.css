@@ -1,0 +1,54 @@
+.about-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1f2937;
+}
+
+.about-container h1 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.about-container h2 {
+    margin-top: 40px;
+    margin-bottom: 16px;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.about-container p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    color: #374151;
+}
+
+.about-container .intro {
+    font-size: 1.05rem;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.skills span {
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #111827;
+}
+
+.closing {
+    margin-top: 30px;
+    font-style: italic;
+    color: #4b5563;
+}
