@@ -6,5 +6,6 @@ from users import views
 urlpatterns = [
     path('', views.loginPage, name='loginPage'),
     path('login/', views.loginUser, name='loginUser'),
+    path('dashboard/', views.dashboard, name='dashboard'),
     path('logout/', views.logoutUser, name='logoutUser'),
 ]
