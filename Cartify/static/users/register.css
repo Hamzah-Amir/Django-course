@@ -56,9 +56,9 @@
     border-radius: 5px;
 }
 
-.btn {
+.register-btn {
     padding: 10px;
-    background-color: cyan;
+    background-color: rgb(36, 95, 173);
     width: 100%;
     border: none;
     border-radius: 5px;
