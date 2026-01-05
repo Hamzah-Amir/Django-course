@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    {% load static %}
+    <link rel="stylesheet" href={% static "base.css" %}>
+    {% block extra_head %}{% endblock extra_head %}
+</head>
+<body>
+    <header>
+        <nav class='navbar'>
+            <div class="logo">Cartify</div>
+            <div class='right-nav'>
+                <ul>
+                    <li><a href="{% url "home" %}">Products</a></li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+            <div>
+                <ul class='login-ul'>
+                    <li><button class='btn'><a href="{% url "loginUser" %}"></a>Log In</button></li>
+                    <li><button class='btn'><a href="{% url "registerUser" %}"></a>Register</button></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    {% block body %}{% endblock body %}
+</body>
+</html>
