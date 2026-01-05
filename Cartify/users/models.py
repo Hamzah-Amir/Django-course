@@ -6,9 +6,9 @@ from django.contrib.auth.models import AbstractUser
 GENDER_CHOICES = [('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')]
 class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
-    gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
-    age = models.PositiveIntegerField()
-    phone_number = models.CharField(max_length=15)
+    gender = models.CharField(max_length=10, choices=GENDER_CHOICES, null=True, blank=True)
+    age = models.PositiveIntegerField(null=True, blank=True)
+    phone_number = models.CharField(max_length=15, null=True, blank=True)
     is_seller = models.BooleanField(default=False)
     is_buyer = models.BooleanField(default=True)
 
