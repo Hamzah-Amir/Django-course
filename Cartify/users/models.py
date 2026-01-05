@@ -5,7 +5,6 @@ from django.contrib.auth.models import AbstractUser
 
 GENDER_CHOICES = [('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')]
 class CustomUser(AbstractUser):
-    id = models.AutoField(primary_key=True)
     email = models.EmailField(unique=True)
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
     age = models.PositiveIntegerField()
