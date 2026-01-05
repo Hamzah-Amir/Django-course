@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 GENDER_CHOICES = [('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')]
-ROLE_CHOICES = [('buyer', 'buyer'), ('Seller', 'Seller')]
+ROLE_CHOICES = [('buyer', 'Buyer'), ('seller', 'Seller')]
 class CustomUser(AbstractUser):
     user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     email = models.EmailField(unique=True, null=False, blank=False)
