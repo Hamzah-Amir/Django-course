@@ -5,7 +5,7 @@
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     max-width: 100%;
     align-items: center;
     padding: 20px;
@@ -22,13 +22,16 @@ nav ul {
 
 .right-nav{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: baseline;
+    gap: 30px;
 }
 
 nav ul li {
     list-style: none;
-    font-size: larger;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn {
@@ -38,6 +41,7 @@ nav ul li {
     padding-inline: 20px;
     padding-block: 15px;
     cursor: pointer;
+    font-size: large;
 }
 
 a {
@@ -46,5 +50,5 @@ a {
 }
 
 .logo {
-    font-size: x-large;
+    font-size: 36px;
 }
