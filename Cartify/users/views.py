@@ -1,6 +1,8 @@
 from django.shortcuts import render
 
 # Create your views here.
+def role(request):
+    return render(request, 'users/role.html')
 
 def registerUser(request):
     return  render(request, 'users/register.html')
