@@ -1,9 +1,13 @@
 from django.shortcuts import render
+from products.models import Product
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'products/home.html')
+    # Logic for Fetching Products
+    products = Product.objects.filter(stock__gt=0)
+            
+    return render(request, 'products/home.html', {"products": products})
 
 def productDetail(request):
     if request.method == "GET":
