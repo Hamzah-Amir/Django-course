@@ -7,8 +7,10 @@
 }
 
 .product-detail {
-    height: 110vh;
+    min-height: auto;
     width: 70%;
+    display: flex;
+    flex-direction: column;
     padding: 30px;
     border: 1px solid black;
 }
@@ -77,3 +79,8 @@
     padding: 15px;
 }
 
+.detail-page .btn {
+    width: 100%;
+    margin-top: 30px;
+    background-color: slategray;
+}
