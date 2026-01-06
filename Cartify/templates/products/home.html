@@ -19,16 +19,19 @@
     </div>
 </section>
 <section class='products-cont'>
-    
+    {% for product in products %}
     <div class="product-card">
         <div class="product-img">
-            <span>Image placeholder</span>
+            <img src="{{product.image.url}}" alt="{{product.name}}">
         </div>
         <div class="product-detail">
-            <span class='product-title'>Product One</span>
-            <span class='product-price'>$29.99</span>
-            <button class='btn'>View Product</button>
+            <span class='product-title'>{{product.name}}</span>
+            <span class='product-price'>{{product.price}}</span>
+            <a href="{% url "productDetail" product.id %}">
+                <button class='btn'>View Product</button>
+            </a>
         </div>
     </div>
+    {% endfor %}
 </section>
 {% endblock body %}
