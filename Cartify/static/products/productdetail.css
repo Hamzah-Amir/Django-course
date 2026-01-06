@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    gap: 80px;
+    /* margin: 70px 40px; */
+    margin: 30px auto;
+    width: 70vw;
+}
+
+.product-detail {
+    height: 110vh;
+    width: 70%;
+    padding: 30px;
+    border: 1px solid black;
+}
+
+.sidebar {
+    border: 1px solid black;
+    width: 30vw;
+    height: 85vh;
+}
+
+.detail-page .img {
+    background-color: gainsboro;
+    max-width: 100%;
+    padding: 15px;
+    height: 39%;
+    object-fit: cover;
+}
+
+.product-detail img {
+    width: 650px;
+}
+
+.details {
+    padding-top: 20px;
+}
+
+.price {
+    font-weight: 500;
+    padding-top: 20px;
+    font-size: x-large;
+}
+
+.in-stock {
+    border: 1px solid green;
+    color: green;
+    margin-top: 20px;
+    padding: 10px;
+    width: fit-content;
+    font-weight: 500;
+}
+
+.out-stock {
+    border: 1px solid red;
+    color: red;
+    margin-top: 20px;
+    padding: 10px;
+    width: fit-content;
+    font-weight: 500;
+}
+
+.seller {
+    font-size: large;
+    padding-top: 20px;
+    color: gray;
+}
+
+.seller span {
+    color: black;
+}
+
+.description {
+    margin-top: 20px;
+}
+
+.description p {
+    padding: 15px;
+}
+
