@@ -14,4 +14,7 @@ def productDetail(request, uuid):
     product = Product.objects.filter(id=id).first()
     print(product)
 
-    return render(request, 'products/productdetail.html', {"product": product})
+    # Get related products from same category, excluding current product
+    related_products = Product.objects.filter(category=product.category).exclude(id=product.id)[:3]
+
+    return render(request, 'products/productdetail.html', {"product": product, "related_products": related_products})
