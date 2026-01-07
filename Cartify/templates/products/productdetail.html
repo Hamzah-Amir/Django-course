@@ -31,7 +31,28 @@
                 <button class='btn'>Add to Cart</button>
             </div>
         </div>
-        <div class="sidebar"></div>
+        <div class="sidebar">
+            <aside class="related-products">
+                <h3>Related Products</h3>
+                <div class="related-list">
+                    {% if related_products and related_products.exists %}
+                        {% for p in related_products %}
+                        <a href="{% url 'productDetail' p.id %}" class="related-item">
+                            <div class="thumb">
+                                <img src="{{ p.image.url }}" alt="{{ p.name }}">
+                            </div>
+                            <div class="meta">
+                                <p class="title">{{ p.name }}</p>
+                                <p class="price">${{ p.price }}</p>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    {% else %}
+                        <p class="no-related">No related products found.</p>
+                    {% endif %}
+                </div>
+            </aside>
+        </div>
     </div>
 </div>
 {% endblock body  %}
