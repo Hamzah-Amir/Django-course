@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from users.models import CustomUser
+from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
@@ -25,6 +26,29 @@ def registerUser(request):
         gender = request.POST.get('gender')
         age = request.POST.get('age')
         phone = request.POST.get('phone')
+
+        if CustomUser.objects.filter(username=username).exists():
+            return render(request, 'users/register.html', {
+                "username_error": "Username Already Exist",
+                "role": role,
+                'form_data': request.POST 
+                })
+
+        if CustomUser.objects.filter(email=email).exists():
+            return render(request, 'users/register.html', {
+                "email_error": "Email Already Exist",
+                "role": role,
+                'form_data': request.POST 
+                })
+
+        if CustomUser.objects.filter(phone_number=phone).exists():
+            return render(request, 'users/register.html', {
+                "number_error": "Number Already registered",
+                "role": role,
+                'form_data': request.POST 
+                })
+
+
         user = CustomUser.objects.create_user(username=username,
                                                email=email,
                                                first_name=first_name,
