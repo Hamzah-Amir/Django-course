@@ -1,5 +1,18 @@
 {% extends "base.html" %}
 
-{% block body  %}
+{% block title  %}Seller Dashboard{% endblock title  %}
+{% load static %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static "seller/seller_dashboard.css" %}">
+{% endblock extra_head %}
 
-This is seller Dashboard{% endblock body  %}
+{% block body  %}
+<div class='seller-dashboard'>
+    <aside class=sidebar></aside>
+    <div class="main-dashboard">
+        <div class="dashboard-head">
+            <span></span>
+        </div>
+    </div>
+</div>
+{% endblock body  %}
