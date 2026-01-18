@@ -3,12 +3,13 @@
     gap: 80px;
     /* margin: 70px 40px; */
     margin: 30px auto;
-    width: 70vw;
+    width: 80%;
 }
 
 .product-detail {
-    min-height: auto;
-    width: 70%;
+    /* min-height: auto;
+    width: 70%; */
+    flex: 1;
     display: flex;
     flex-direction: column;
     padding: 30px;
@@ -16,22 +17,20 @@
 }
 
 .sidebar {
+    flex-basis: 300px;
     border: 1px solid black;
-    max-width: 22vw;
     padding: 20px;
-    height: 85vh;
+    height: fit-content;
 }
 
 .detail-page .img {
-    background-color: gainsboro;
-    max-width: 100%;
+    background: #f3f3f3;
+    width: 98%;
+    height: 350px;
     padding: 15px;
-    width: 650px; /* fixed width to align with image */
-    height: 350px; /* fixed height for consistent placeholder */
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 }
 
 .product-detail img {
@@ -192,4 +191,15 @@
     color: #666;
     font-size: 0.95rem;
     padding: 8px;
+}
+
+@media (max-width: 850px) {
+  .container {
+    flex-direction: column;
+    width: 90%;
+  }
+  .sidebar {
+    flex-basis: auto;
+    width: 100%;
+  }
 }
