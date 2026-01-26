@@ -3,7 +3,7 @@ from uuid import uuid4
 
 # Create your models here.
 
-CATEGORY = [("Electronics", "Electronics"), ("Fashion & Apparel", "Fashion & Apparel"), ("Home & Kitchen", "Home & Kitchen"), ("Home & Kitchen", "Home & Kitchen"), ("Toys & Games", "Toys & Games"), ("Beauty & Personal Care", "Beauty & Personal Care"), ("Sports & Outdoors", "Sports & Outdoors"), ("Books & Media", "Books & Media"), ("Grocery & Essentials", "Grocery & Essentials"), ("Automotive", "Automotive"), ("Misc / Other", "Misc / Other")]
+CATEGORY = [("electronics", "Electronics"), ("fashion-apparel", "Fashion & Apparel"), ("home-kitchen", "Home & Kitchen"), ("toys-games", "Toys & Games"), ("beauty-personal-care", "Beauty & Personal Care"), ("sports-outdoors", "Sports & Outdoors"), ("books-media", "Books & Media"), ("grocery-essentials", "Grocery & Essentials"), ("automotive", "Automotive"), ("misc/other", "Misc / Other")]
 
 class Product(models.Model): 
     seller = models.ForeignKey('users.CustomUser', on_delete=models.CASCADE, related_name='products')
@@ -15,5 +15,20 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
+    
     def __str__(self):
         return self.name
+
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='additional_images')
+    image = models.ImageField(upload_to='products/')
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        ordering = ['created_at']
+        verbose_name = 'Product Image'
+        verbose_name_plural = 'Product Images'
+    
+    def __str__(self):
+        return f"Image for {self.product.name}"
