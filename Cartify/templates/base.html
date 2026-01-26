@@ -30,11 +30,11 @@
             {% else %}
             <!-- Right Navigation - Logged In State -->
             <div class="navbar-right navbar-user">
-                <a href="#profile" class="nav-link profile-link">
+                <a href="{% url "profile" %}" class="nav-link profile-link">
                     <span class="icon">👤</span>
                     Profile
                 </a>
-                <a href="#wishlist" class="nav-link wishlist-link">
+                <a href="{% url "wishlist" %}" class="nav-link wishlist-link">
                     <span class="icon">❤</span>
                     Wishlist
                     {% if wishlist_count %}
