@@ -76,4 +76,5 @@ def loginUser(request):
     return render(request, 'users/login.html')
 
 def logoutUser(request):
-    pass
+    logout(request)
+    return redirect("loginUser")
