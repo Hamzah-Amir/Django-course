@@ -78,3 +78,22 @@ def loginUser(request):
 def logoutUser(request):
     logout(request)
     return redirect("loginUser")
+
+
+def profile(request):
+    if request.method == "GET":
+        return render(request, 'users/profile.html')
+    
+    if request.method == "POST":
+        user = request.user
+        user.username = request.POST.get('username')
+        user.first_name = request.POST.get('first_name')
+        user.last_name = request.POST.get('last_name')
+        user.gender = request.POST.get('gender')
+        user.age = request.POST.get('age')
+        user.phone_number = request.POST.get('phone_number')
+        user.save()
+        return render(request, "users/profile.html")
+    
+def wishlist(request):
+    return render(request, "users/wishlist.html")
